@@ -96,6 +96,7 @@ server.use('/orders',isAuth(),orderRouter.router)
 //this line we add to make router work in case of other router doesnot math
 server.get('*',(req,res) => res.sendFile(path.resolve("build","index.html")))
 
+
 //Passport Strategies 
 passport.use('local',new LocalStrategy(
   {usernameField:'email'},
@@ -190,7 +191,7 @@ server.post("/create-payment-intent", async (req, res) => {
       enabled: true,
     },
     metadata:{
-      orderId
+      orderId 
     }
   });
 
